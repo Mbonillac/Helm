@@ -16,10 +16,6 @@ Breve manual sobre el despliegue de aplicaciones con Helm.
 
 4. [Instalación App](preparacionservidores.md)
 
-5. [Instalación del SO](instalacion.md)
-
-
-
 
 # Referencias  
 
