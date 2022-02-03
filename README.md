@@ -8,13 +8,13 @@ Breve manual sobre el despliegue de aplicaciones con Helm.
 
 # Índice
 
-1. [¿Qué es Helm?](introduccion.md)
+1. [¿Qué es Helm?](helm.md)
 
-2. [Instalación](k0s.md)
+2. [Instalación](instalacion.md)
 
-3. [Repositorios](cloud.md)
+3. [Repositorios](repositorios.md)
 
-4. [Instalación App](preparacionservidores.md)
+4. [Instalación App](wordpress.md)
 
 
 # Referencias  
