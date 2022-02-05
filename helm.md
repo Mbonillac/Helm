@@ -1,9 +1,6 @@
 
-<center>
-
 ![Logo-helm](https://github.com/Mbonillac/Helm/blob/main/img/helm-logo.jpg?raw=true)
 
-</center>
 
 ## Definición Helm  
 
