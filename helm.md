@@ -1,8 +1,4 @@
-
-![Logo-helm](https://github.com/Mbonillac/Helm/blob/main/img/helm-logo.jpg?raw=true)
-
-
-## Definición Helm  
+## Definición Helm                         ![Logo-helm](https://github.com/Mbonillac/Helm/blob/main/img/helm-logo.jpg?raw=true)
 
   
  Una aplicación real completa se compone de un conjunto amplio de objetos que definen Deployments, ConfigMaps, Services, etc. La API de Kubernetes no nos ofrece un "superobjeto" que defina una aplicación completa.
