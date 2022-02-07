@@ -8,15 +8,15 @@ Guía rápida sobre el despliegue de aplicaciones con Helm.
 
 # Índice
 
-1. [¿Qué es Helm? / ¿Qué son charts?](helm.md)
+1. [¿Qué es Helm? / ¿Qué son charts?.](helm.md)
 
-2. [Instalación](instalacion.md)
+2. [Instalación de Helm.](instalacion.md)
 
-3. [Repositorios](repositorios.md)
+3. [Repositorios de Helm.](repositorios.md)
 
-4. [Charts](charts.md)
+4. [Charts y Parámetros.](charts.md)
 
-5. [Instalación App](wordpress.md)
+5. [Instalación App.](wordpress.md)
 
 
 # Referencias  
