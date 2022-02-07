@@ -8,7 +8,7 @@ Guía rápida sobre el despliegue de aplicaciones con Helm.
 
 # Índice
 
-1. [¿Qué es Helm? / ¿Qué es chart?](helm.md)
+1. [¿Qué es Helm? / ¿Qué son charts?](helm.md)
 
 2. [Instalación](instalacion.md)
 

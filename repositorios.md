@@ -1,8 +1,8 @@
-## Repositorios
+# Repositorios
 
 Una vez que tengamos instalado Helm, lo siguiente es indicar un repositorio para que podamos empezar a trabajar; para ello a traves del propio comando helm.
 
-### Añadir
+## Añadir
 La sintaxis sería:
 helm repo add "nombre_que_le_damos" "URL_del_repositorio" --force-update
 ~~~
@@ -18,7 +18,7 @@ usuario@debian-203:~$ helm repo add bitnami https://charts.bitnami.com/bitnami
 
 ~~~
 
-### Comprobar
+## Comprobar
 Una vez que hemos añadido los repositorios a Helm, podemos comprobarlos con un comando que nos muestra una lista con todos los repositorios que tenemos añadidos.
 
 ~~~
@@ -30,7 +30,7 @@ bitnami	https://charts.bitnami.com/bitnami
 
 ~~~
 
-### Actualizar los repositoriso
+## Actualizar los repositoriso
 Para actualizar la lista de charts ofrecidos por los repositorios.
 
 ~~~
@@ -41,7 +41,7 @@ Hang tight while we grab the latest from your chart repositories...
 Update Complete. ⎈Happy Helming!⎈
 ~~~
 
-### Eliminar
+## Eliminar
 Para eliminar un repositorio.
 ~~~
 usuario@debian-203:~$ helm repo remove stable

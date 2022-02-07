@@ -1,6 +1,8 @@
-## Instalación de chart - WordPress
+#  Instalación de WordPress
 
-Para instalar el chart de WordPress ejecutamos la siguiente instrucción, en la que además estaremos asignandole un nombre interno y parametrizando:
+## Instalación parametrizada
+
+Para instalar el chart de WordPress ejecutamos la siguiente instrucción, en la que además estaremos asignándole un nombre interno y parametrizando:
  - Tipo de servicio.
  - Nombre del blog.
  - Nombre del usuario.
@@ -41,15 +43,22 @@ To access your WordPress site from outside the cluster follow the steps below:
   echo Username: manuel
   echo Password: $(kubectl get secret --namespace default miwordpress -o jsonpath="{.data.wordpress-password}" | base64 --decode)
 ~~~
+
+
+## Obtener Información
+
 Para poder obtener la información de cualquier chart desplegado tendremos que utilizar el siguiente comando:
 
 ~~~
 usuario@debian-203:~$ helm status miwordpress
 ~~~
 
-Si queremos acceder a la aplicación desde el exterior debemos ejecutar las instrucciones:
-- minikube ip:  que nos muestran la ip de nuestro cluster.
-- kubectl get all:  para ver el puerto asignado al Service NodePort.
+
+## Acceso a la aplicación
+
+Si queremos acceder a la aplicación desde el exterior debemos ejecutar los comandos:
+- minikube ip:  para obtener la ip de nuestro cluster.
+- kubectl get all:  para obtener el puerto asignado al Service NodePort.
 
 Trás obtener los datos necesarios los introduciremos en el navegador y accederemos a wordpress.
 
@@ -58,12 +67,65 @@ Trás obtener los datos necesarios los introduciremos en el navegador y accedere
 
 Como hemos indicado, a través de parámetros, el usuario administrador y su contraseña podemos entrar en la zona de administración de WordPress y editarlo a nuestro gusto, por ejemplo creando una entrada nueva.
 
-![nueva_entrada_WordPress](https://github.com/Mbonillac/Helm/blob/main/img/nueva_entrada_wordpress.png?raw=true)
+![nueva_entrada_WordPress](https://github.com/Mbonillac/Helm/blob/main/img/nueva_entrada_wordpress.png?raw=true)  
 
-
-Para poder listar los deployments que hemos realizado con Helm utilizaremos:
+## Listar deployments y elementos
+Para poder listar los deployments que hemos desplegado con Helm utilizaremos:
 ~~~
 usuario@debian-203:~$ helm ls
 NAME            NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                   APP VERSION
 miwordpress     default         1               2022-02-07 18:14:24.7697074 +0100 CET   deployed        wordpress-13.0.9        5.9.0 
+~~~
+
+Y para listar todos los elementos creados y desplegados usaremos el comando:
+~~~
+usuario@debian-203:~$ kubectl get all,cm,secret,pv,pvc
+NAME                               READY   STATUS    RESTARTS   AGE
+pod/miwordpress-566d76d684-nqkr4   0/1     Running   0          25s
+pod/miwordpress-mariadb-0          0/1     Running   0          25s
+
+NAME                          TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                      AGE
+service/kubernetes            ClusterIP   10.96.0.1       <none>        443/TCP                      52d
+service/miwordpress           NodePort    10.109.90.172   <none>        80:30624/TCP,443:31593/TCP   25s
+service/miwordpress-mariadb   ClusterIP   10.111.52.129   <none>        3306/TCP                     25s
+
+NAME                          READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/miwordpress   0/1     1            0           25s
+
+NAME                                     DESIRED   CURRENT   READY   AGE
+replicaset.apps/miwordpress-566d76d684   1         1         0       25s
+
+NAME                                   READY   AGE
+statefulset.apps/miwordpress-mariadb   0/1     25s
+
+NAME                            DATA   AGE
+configmap/kube-root-ca.crt      1      52d
+configmap/miwordpress-mariadb   1      25s
+
+NAME                                       TYPE                                  DATA   AGE
+secret/default-token-6m5x4                 kubernetes.io/service-account-token   3      52d
+secret/miwordpress                         Opaque                                1      25s
+secret/miwordpress-mariadb                 Opaque                                2      25s
+secret/miwordpress-mariadb-token-jdcx2     kubernetes.io/service-account-token   3      25s
+secret/sh.helm.release.v1.miwordpress.v1   helm.sh/release.v1                    1      25s
+
+NAME                                                        CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM                                STORAGECLASS   REASON   AGE
+persistentvolume/pvc-22b83b6a-7838-4024-a571-8b57ebb213a7   10Gi       RWO            Delete           Bound    default/miwordpress                  standard                25s
+persistentvolume/pvc-b4886e89-c6c5-40ab-8f51-9e6fea8ee55e   8Gi        RWO            Delete           Bound    default/data-miwordpress-mariadb-0   standard                25s
+
+NAME                                               STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+persistentvolumeclaim/data-miwordpress-mariadb-0   Bound    pvc-b4886e89-c6c5-40ab-8f51-9e6fea8ee55e   8Gi        RWO            standard       25s
+persistentvolumeclaim/miwordpress                  Bound    pvc-22b83b6a-7838-4024-a571-8b57ebb213a7   10Gi       RWO            standard       25s
+~~~
+## Desinstalar aplicaciones
+
+Para poder desinstalar una aplicación :
+~~~
+usuario@debian-203:~$ helm delete miwordpress
+release "miwordpress" uninstalled
+~~~
+Hay que tener en cuenta que, si estamos trabajando con minikube, al eleminar una aplicación es probable que el PVC no sea eliminado y tengamos que hacerlo me manera manual.
+~~~
+usuario@debian-203:~$ kubectl delete persistentvolumeclaim/data-miwordpress-mariadb-0
+persistentvolumeclaim "data-miwordpress-mariadb-0" deleted
 ~~~
