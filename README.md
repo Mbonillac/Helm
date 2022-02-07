@@ -14,7 +14,9 @@ Guía rápida sobre el despliegue de aplicaciones con Helm.
 
 3. [Repositorios](repositorios.md)
 
-4. [Instalación App](wordpress.md)
+4. [Charts](charts.md)
+
+5. [Instalación App](wordpress.md)
 
 
 # Referencias  
