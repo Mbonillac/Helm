@@ -3,7 +3,7 @@
 
 ## Descripción  
 
-Breve manual sobre el despliegue de aplicaciones con Helm.
+Guía rápida sobre el despliegue de aplicaciones con Helm.
 
 
 # Índice
