@@ -8,7 +8,7 @@ Guía rápida sobre el despliegue de aplicaciones con Helm.
 
 # Índice
 
-1. [¿Qué es Helm?](helm.md)
+1. [¿Qué es Helm? / ¿Qué es chart?](helm.md)
 
 2. [Instalación](instalacion.md)
 
@@ -23,8 +23,5 @@ Guía rápida sobre el despliegue de aplicaciones con Helm.
 
 # Licencia
 
-<center>
 
 ![Licencia](https://github.com/Mbonillac/k0s/blob/main/imagenes/licencia.jpg?raw=true)
-
-</CENTER>

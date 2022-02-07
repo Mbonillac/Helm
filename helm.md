@@ -1,6 +1,6 @@
 ![Logo-helm](https://github.com/Mbonillac/Helm/blob/main/img/helm-logo.jpg?raw=true)
 ![Logo-artifacthub](https://github.com/Mbonillac/Helm/blob/main/img/artifacthub-logo.jpg?raw=true)
-## Definición Helm & charts
+## Definición Helm y charts
 
 ### ¿Qué es Helm?
   
