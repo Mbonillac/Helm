@@ -42,5 +42,5 @@ Hay que tener en cuenta que al ejecutar este comando nos aparecerá una gran can
 ~~~
 usuario@debian-203:~$ helm show all bitnami/wordpress | grep "service.type"
   ## @param service.type WordPress service type
-| `service.type`                     | WordPress service type                                                                                                           | `LoadBalancer`           |
+| `service.type`                     | WordPress service type                                 | `LoadBalancer`           |
 ~~~
