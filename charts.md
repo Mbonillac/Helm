@@ -37,10 +37,12 @@ En al terminal también podemos obtener esta información ejecutando el siguient
 usuario@debian-203:~$ helm show all bitnami/wordpress
 ~~~
 
-Hay que tener en cuenta que al ejecutar este comando nos aparecerá una gran cantidad de datos en varias páginas. Por lo que es aconsejable usar tuberías para encontrar más rápido lo que buscamos. Por ejemplo con el servicio antes mencionado.
+Hay que tener en cuenta que al ejecutar este comando nos aparecerá una gran cantidad de datos en varias páginas. Por lo que es aconsejable usar tuberías para encontrar más rápido lo que buscamos. Por ejemplo con el servicio `LoadBalancer` antes mencionado.
 
 ~~~
 usuario@debian-203:~$ helm show all bitnami/wordpress | grep "service.type"
   ## @param service.type WordPress service type
-| `service.type`                     | WordPress service type                                 | `LoadBalancer`           |
+| `service.type`                     | WordPress service type                     | `LoadBalancer`           |
 ~~~
+
+En el siguiente apartado procederemos a [instalar WordPress](wordpress.md).
