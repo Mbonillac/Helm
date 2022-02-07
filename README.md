@@ -16,7 +16,7 @@ Guía rápida sobre el despliegue de aplicaciones con Helm.
 
 4. [Charts y Parámetros.](charts.md)
 
-5. [Instalación App.](wordpress.md)
+5. [Instalación chart y despliegue de aplicación.](wordpress.md)
 
 
 # Referencias  
