@@ -30,7 +30,7 @@ bitnami	https://charts.bitnami.com/bitnami
 
 ~~~
 
-## Actualizar los repositoriso
+## Actualizar los repositorios
 Para actualizar la lista de charts ofrecidos por los repositorios.
 
 ~~~
